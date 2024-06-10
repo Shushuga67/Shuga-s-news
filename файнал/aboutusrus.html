@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Это сделала Шуги</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #000033 0%, #330066 100%);
+            color: white;
+            font-family: 'Lobster', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fireworks animation */
+        @keyframes fireworks {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+
+        .firework {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 3px;
+            height: 3px;
+            animation: fireworks 1.5s infinite;
+        }
+
+        .firework:nth-child(1) { top: 20%; left: 40%; animation-delay: 0.1s; }
+        .firework:nth-child(2) { top: 30%; left: 60%; animation-delay: 0.3s; }
+        .firework:nth-child(3) { top: 50%; left: 50%; animation-delay: 0.5s; }
+        .firework:nth-child(4) { top: 70%; left: 30%; animation-delay: 0.7s; }
+        .firework:nth-child(5) { top: 80%; left: 70%; animation-delay: 0.9s; }
+
+        .top-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            height: 75px;
+        }
+
+        .navbar-logo img {
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-main {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-main li {
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .menu-main a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .menu-main a:hover {
+            color: yellow;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .menu-main a:hover::after {
+            content: '⭐️';
+            position: absolute;
+            right: -20px;
+            top: 0;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 100px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .carousel-container {
+            flex: 2;
+            max-width: 60%;
+        }
+
+        .links-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            border-left: 2px solid white;
+            margin-left: 20px;
+        }
+
+        .links-container a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .links-container a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+bottom: 20px;
+            right: 20px;
+            background-color: #000033;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #330066;
+        }
+         .profile-info {
+    border: 2px solid #330066;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.profile-info:before {
+    content: " ";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #330066;
+}
+
+.profile-info:after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    border-top: 10px solid #330066;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.card-title,
+.card-text {
+    color: #330066;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Fireworks Background -->
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+<nav class="top-menu">
+    <a class="navbar-logo" href="C:\Users\Nora\Desktop\файнал\abouusshuga.html"><img src="C:\Users\Nora\Downloads\yoooo-removebg-preview.png" alt="Logo"></a>
+    <ul class="menu-main">
+        <li><a href="C:\Users\Nora\Desktop\файнал\life.html">Жизнь</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\myfinal.html">Новости</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\consultation.html">Блоги</a></li>
+        <li>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" list="suggestions" type="search" placeholder="Search" aria-label="Search">
+                <datalist id="suggestions">
+                    <option value="II женская игра по волейболу среди стран СНГ" data-url="C:\Users\Nora\Desktop\файнал\articletwo.html">II women's volleyball game among the CIS countries</option>
+                    <option value="Казахстанский Халкын – главный инициатор благотворительной деятельности" data-url="C:\Users\Nora\Desktop\файнал\articlethree.html">Kazakhstan Khalkyn is the main initiator of charitable activities</option>
+                    <option value="Развитие медицины с появлением COVID-19" data-url="C:\Users\Nora\Desktop\файнал\articlefive.html">The development of medicine with the advent of the COVID-19</option>
+                </datalist>
+                <button class="btn btn-outline-success" id="searchButton" type="button">Поиск</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var input = document.querySelector('input[type="search"]');
+        var selectedOption = document.querySelector('option[value="' + input.value + '"]');
+        if (selectedOption && selectedOption.dataset.url) {
+            window.location.href = selectedOption.dataset.url;
+        }
+    });
+</script>
+
+ 
+
+<div class="container">
+    <div class="profile">
+        <img src="C:\Users\Nora\Downloads\yoooo-removebg-preview.png" alt="Profile Picture" width="300">
+        <div class="profile-info">
+            <h2>О нас</h2>
+            <p>Мы, журналистское агентство «Новости Шуги», предоставляем оперативные и достоверные новости из мира политики, экономики, технологий и культуры. Наша команда профессионалов работает круглосуточно, чтобы держать вас в курсе последних событий. Мы стремимся к объективности и независимости в каждом материале, обеспечивая полное и всестороннее освещение событий. Подпишитесь на «Новости Шуги» и будьте в центре мировых новостей!</p>
+            <p>Свяжитесь с нами: <br>
+                Phone: +7 (707) 917 64 55 <br>
+                Email: shugasnews@example.com</p>
+           </div>
+    </div>
+    <hr>
+</div>
+
+<!-- Bootstrap Cards Component -->
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="C:\Users\Nora\Desktop\файнал\volleyball.jpeg" class="card-img-top" alt="Article 1">
+                <div class="card-body">
+                    <h5 class="card-title">Последние новости спорта</h5>
+                    <p class="card-text">II женская игра по волейболу среди стран СНГ</p>
+                    <a href="C:\Users\Nora\Desktop\файнал\articletwo.html" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="C:\Users\Nora\Desktop\файнал\halkyna.webp" class="card-img-top" alt="Article 2">
+                <div class="card-body">
+                    <h5 class="card-title">Последние новости</h5>
+                    <p class="card-text">"Казахстан Халкын» — главный инициатор благотворительной деятельности</p>
+                    <a href="C:\Users\Nora\Desktop\файнал\articlethree.html" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="C:\Users\Nora\Desktop\файнал\cooking.jpg" class="card-img-top" alt="Article 3">
+                <div class="card-body">
+                    <h5 class="card-title">Кулинарные мероприятия</h5>
+                    <p class="card-text">Мастер-класс Chef Days Шоу</p>
+                    <a href="C:\Users\Nora\Desktop\файнал\articlefour.html" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Carousel Component -->
+<div class="container my-4">
+    <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#newsCarousel" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="C:\Users\Nora\Desktop\файнал\Tima.jpg" class="d-block w-100" style="width: 800px; height: 400px;" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Интервью</h5>
+                    <p>Смотрите в реальном времени</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="C:\Users\Nora\Desktop\файнал\timatwo.jpg" class="d-block w-100" style="width: 800px; height: 400px;" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Интервью</h5>
+                    <p>Смотрите в реальном времени</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Shuga's News. All Rights Reserved.</p>
+        <p>Follow us on:
+            <a href="https://www.youtube.com/@TengrinewsTVKZ" class="text-white mx-2">YouTube</a> |
+            <a href="https://x.com/tengrinewskz?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="text-white mx-2">Twitter</a> |
+            <a href="https://www.instagram.com/shugagoy/" class="text-white mx-2">Instagram</a> 
+        </p>
+
+    </div>
+</footer>
+
+  <button class="scroll-to-top" onclick="scrollToTop()">вверх</button>
+  <a class="btn btn-primary" href="C:\Users\Nora\Desktop\файнал\abouusshuga.html" role="button">eng</a>
+</style>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Показать кнопку, когда прокручено вниз 20px от верха
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.querySelector(".scroll-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Прокрутка наверх
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body></html>

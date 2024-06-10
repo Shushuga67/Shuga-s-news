@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Это сделала Шуги</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #000033 0%, #330066 100%);
+            color: white;
+            font-family: 'Lobster', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fireworks animation */
+        @keyframes fireworks {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+
+        .firework {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 3px;
+            height: 3px;
+            animation: fireworks 1.5s infinite;
+        }
+
+        .firework:nth-child(1) { top: 20%; left: 40%; animation-delay: 0.1s; }
+        .firework:nth-child(2) { top: 30%; left: 60%; animation-delay: 0.3s; }
+        .firework:nth-child(3) { top: 50%; left: 50%; animation-delay: 0.5s; }
+        .firework:nth-child(4) { top: 70%; left: 30%; animation-delay: 0.7s; }
+        .firework:nth-child(5) { top: 80%; left: 70%; animation-delay: 0.9s; }
+
+        .top-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            height: 75px;
+        }
+
+        .navbar-logo img {
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-main {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-main li {
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .menu-main a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .menu-main a:hover {
+            color: yellow;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .menu-main a:hover::after {
+            content: '⭐️';
+            position: absolute;
+            right: -20px;
+            top: 0;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 100px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .carousel-container {
+            flex: 2;
+            max-width: 60%;
+        }
+
+        .links-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            border-left: 2px solid white;
+            margin-left: 20px;
+        }
+
+        .links-container a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .links-container a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+bottom: 20px;
+            right: 20px;
+            background-color: #000033;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #330066;
+        }
+         .profile-info {
+    border: 2px solid #330066;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+<style>
+    /* Video frame styles */
+    .video-frame {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid #330066;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .video-frame:before,
+    .video-frame:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #330066;
+    }
+
+    .video-frame:before {
+        top: -10px;
+        left: -10px;
+        border-top-left-radius: 10px;
+    }
+
+    .video-frame:after {
+        bottom: -10px;
+        right: -10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    /* Video styles */
+    iframe {
+        width: 100%;
+        height: 400px; /* Set the desired height for the video */
+        border: none; /* Remove default border */
+    }
+</style>
+
+<body>
+    <!-- Fireworks Background -->
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+<nav class="top-menu">
+    <a class="navbar-logo" href="C:\Users\Nora\Desktop\файнал\abouusshuga.html"><img src="C:\Users\Nora\Downloads\yoooo-removebg-preview.png" alt="Logo"></a>
+    <ul class="menu-main">
+        <li><a href="C:\Users\Nora\Desktop\файнал\life.html">Life</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\myfinal.html">News</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\consultation.html">Blogs</a></li>
+        <li>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" list="suggestions" type="search" placeholder="Search" aria-label="Search">
+                <datalist id="suggestions">
+                    <option value="II women's volleyball game among the CIS countries" data-url="C:\Users\Nora\Desktop\файнал\articletwo.html">II women's volleyball game among the CIS countries</option>
+                    <option value="Kazakhstan Khalkyn is the main initiator of charitable activities" data-url="C:\Users\Nora\Desktop\файнал\articlethree.html">Kazakhstan Khalkyn is the main initiator of charitable activities</option>
+                    <option value="The development of medicine with the advent of the COVID-19" data-url="C:\Users\Nora\Desktop\файнал\articlefive.html">The development of medicine with the advent of the COVID-19</option>
+                </datalist>
+                <button class="btn btn-outline-success" id="searchButton" type="button">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var input = document.querySelector('input[type="search"]');
+        var selectedOption = document.querySelector('option[value="' + input.value + '"]');
+        if (selectedOption && selectedOption.dataset.url) {
+            window.location.href = selectedOption.dataset.url;
+        }
+    });
+</script>
+<br><br><br><br>
+<div>
+
+<div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</div>
+
+<div>
+
+<div class="video-frame">
+    <iframe src="https://youtu.be/8cnkHygkBcY" allowfullscreen></iframe>
+</div>
+
+<div>
+
+<div class="video-frame">
+    <iframe src="https://youtu.be/NIPW__52cMs?si=I5e_BD-29Xh92jD0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+
+    <button class="scroll-to-top" onclick="scrollToTop()">up</button>
+    <a class="btn btn-primary" href="C:\Users\Nora\Desktop\файнал\liferus.html" role="button">rus</a>
+<br> <br> <br>
+<footer>
+    <div class="container">
+        <div class="info-section">
+            <h3>about the project</h3>
+            <hr>
+            <p>Our website is an information portal whose purpose is to inform.</p>
+        </div>
+        <div class="info-section">
+            <h3>Editorial contacts</h3>
+            <hr>
+            <p>+7 (707) 917 64 55</p>
+            <p>Email: shugasnews@example.com</p>
+        </div>
+        <div class="info-section">
+            <h3>Advertising</h3>
+            <hr>
+            <p>+7 (707) 917 64 55</p>
+            <p>Email: shugasnews@example.com</p>
+        </div>
+
+    </div>
+    <div class="copyright">
+        <hr>
+        <p><a href="C:\Users\Nora\Desktop\файнал\rules.html">Rules for using materials</a></p>
+        <p><a href="C:\Users\Nora\Desktop\файнал\policy.html">Privacy Policy</a></p>
+    </div>
+    <p>&copy; 2024 Shuga's news. All rights reserved.</p>
+</footer>
+
+<style>
+    .container {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+    }
+    .info-section {
+        margin-bottom: 20px;
+    }
+    .info-section hr {
+        border: 0;
+        border-top: 1px solid white;
+        margin: 5px 0;
+    }
+    .info-section p {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .info-section a {
+        color: white;
+        text-decoration: none;
+    }
+    .info-section a:hover {
+        text-decoration: underline;
+    }
+    footer p {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .copyright {
+        margin-top: 40px;
+    }
+</style>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Показать кнопку, когда прокручено вниз 20px от верха
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.querySelector(".scroll-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Прокрутка наверх
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья с изображением 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #000033 0%, #330066 100%);
+            color: white;
+            font-family: 'Lobster', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .top-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            height: 75px;
+        }
+
+        .navbar-logo img {
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-main {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-main li {
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .menu-main a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .menu-main a:hover {
+            color: yellow;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-main a:hover::after {
+            content: '⭐️';
+            position: absolute;
+            right: -20px;
+            top: 0;
+        }
+
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-main li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            width: 200px;
+        }
+
+        .submenu a {
+            padding: 10px;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 100px 20px 20px 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .article-meta {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .article-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #000033;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #330066;
+        }
+    </style>
+</head>
+<body>
+<nav class="top-menu">
+    <a class="navbar-logo" href="C:\Users\Nora\Desktop\файнал\abouusshuga.html"><img src="C:\Users\Nora\Downloads\yoooo-removebg-preview.png" alt="Logo"></a>
+    <ul class="menu-main">
+        <li><a href="C:\Users\Nora\Desktop\файнал\life.html">Life</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\myfinal.html">News</a></li>
+        <li><a href="C:\Users\Nora\Desktop\файнал\consultation.html">Blogs</a></li>
+        <li>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" list="suggestions" type="search" placeholder="Search" aria-label="Search">
+                <datalist id="suggestions">
+                    <option value="II women's volleyball game among the CIS countries" data-url="C:\Users\Nora\Desktop\файнал\articletwo.html">II women's volleyball game among the CIS countries</option>
+                    <option value="Kazakhstan Khalkyn is the main initiator of charitable activities" data-url="C:\Users\Nora\Desktop\файнал\articlethree.html">Kazakhstan Khalkyn is the main initiator of charitable activities</option>
+                    <option value="The development of medicine with the advent of the COVID-19" data-url="C:\Users\Nora\Desktop\файнал\articlefive.html">The development of medicine with the advent of the COVID-19</option>
+                </datalist>
+                <button class="btn btn-outline-success" id="searchButton" type="button">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var input = document.querySelector('input[type="search"]');
+        var selectedOption = document.querySelector('option[value="' + input.value + '"]');
+        if (selectedOption && selectedOption.dataset.url) {
+            window.location.href = selectedOption.dataset.url;
+        }
+    });
+</script>
+    <div class="article-container">
+        <h1 class="article-header">Culinary secrets: master class from leading chefs of Kazakhstan and the world from Chef Days Show</h1>
+        <div class="article-meta">
+            by Baynur La Shugy | 21 February 2024
+        </div>
+        <p>Chef Days Show, held in the congress center, is a unique event that brings together the best chefs and experts from all over the world. Master classes from the stars of world gastronomy, a business program with market leaders, an exhibition with leading food manufacturers. Here you can not only enjoy exquisite dishes, but also exchange experiences with the best chefs in the world. The event featured 4 venues, more than 50 partners, more than 10 chefs and more than 20 stands. February 17-18 and is the largest event in the restaurant world of Kazakhstan, supported by the government. One of the key moments of the Chef Days Show is the participation of invited chefs with MICHELIN stars. Among them are such culinary celebrities as Konstantin Ivlev (chef and TV presenter); Vladimir Mukhin (Michelin star chef, White Rabbit); and Ekaterina Alekhina (Michelin star chef from Moscow); In addition, guests of the event had the opportunity to attend master classes by the author of culinary books Andrey Mokich, gold and silver prize winner of the International Chefs Competition Bagdat Kadyrov, chef of Georgian cuisine and TV presenter "Marusya", chef of the Almaty casino "Masao" Evgeny Solyankov.</p>
+        
+        <p>“Chefs must be creative and open to new experiences. This includes experimenting with different cuisines and products, as well as traveling abroad to explore new flavors and ingredients. Taking an internship abroad can also play an important role in expanding your culinary horizons and enriching your experience. All the new flavors and culinary techniques you learn while traveling will stay with you and inspire you to create unique dishes in the future.” says Andrey Mokich. “We develop our cuisines not for fame, but for inspiration. I was once asked where inspiration comes from. For me, inspiration is everywhere, primarily in the market, in conversations with people who expand my horizons and knowledge of products, and also develop my taste preferences.” notes Vladimir Mukhin.</p>
+        
+        <img src="C:\Users\Nora\Desktop\файнал\cheff.png" alt="Описание изображения" class="article-image">
+        
+        <p>The business program of the Chef Days Show featured speakers on current topics of restaurant business development, bringing valuable knowledge and experience to the audience, including Andrey Chekmarev, founder of "Bubble Bob" and "Restorano Project", who spoke about the implementation of a training system in a restaurant; Dmitry Chusov, former development director of the "Lanzhou" chain, who gave a lecture on production accounting as the basis of profit; Yerzhan Tastambekov, founder of "Zebra Coffee"; Ayat Azimov, co-founder of "Global COFFEE" and founder of the pizzeria "Eza. pizza"; Miras Ibraimov, owner of "Shoreditch" in Astana and "LEPIM i VARIM" in Kazakhstan; Dmitry Kazantsev, president of the Association of Accountants of Kazakhstan, and many others..</p>
+        
+        <p>Pastry skills were of particular interest at the Chef Days exhibition. Alexander Bakanov, pastry chef of the Moscow restaurant Black Thai, winner of numerous medals and awards at international competitions. Ksenia Jones, a student of Cedric Grohl and creator of her own brand SAVI, also spoke on stage, sharing her secret techniques for making desserts.</p>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">up</button>
+
+    <script>
+        // Показать кнопку, когда прокручено вниз 20px от верха
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.querySelector(".scroll-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Прокрутка наверх
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
